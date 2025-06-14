@@ -1,0 +1,25 @@
+{
+  "name": "thread-app-backend-graphql",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/index",
+    "dev": "tsc-watch --onSuccess \"npm start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^4.12.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "graphql": "^16.11.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "tsc-watch": "^7.1.1",
+    "typescript": "^5.8.3"
+  }
+}
