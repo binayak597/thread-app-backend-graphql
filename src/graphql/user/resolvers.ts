@@ -1,18 +1,23 @@
+import { UserService } from "../../services/user.js"
+
+
 const queries = {
-  hello: () => "heyy.. there! i am your graphql server"
+  
+  getUserToken: async(_: any, payload: GetUserTokenPayload) => {
+
+    return await UserService.getUserToken(payload);
+  }
 }
 
 const mutations = {
 
-  createUser: (_: any, {firstName, lastName, email, password, saltRound}: {
-    firstName: string,
-    lastName: string,
-    email: string,
-    password: string,
-    saltRound: string
-  }) => {
-    return "randomId"
+  createUser: async (_: any, payload: CreateUserPayload) => {
+    
+    const result = await UserService.createUser(payload);
+
+    return result.id;
   }
+
 }
 
 export const resolvers = {queries, mutations}

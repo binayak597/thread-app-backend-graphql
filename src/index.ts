@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 
 import { createApolloGraphQLServer } from "./graphql/index.js";
 
