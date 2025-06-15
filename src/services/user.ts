@@ -57,4 +57,19 @@ export class UserService {
 
 
   }
+
+  public static decodeJwtToken(token: string) {
+
+    const payload = JWT.verify(token, process.env.JWT_SECRET!);
+
+    return payload;
+  }
+
+  public static async getUserById(id: string) {
+
+    const isUser = await prismaClient.user.findUnique({where: {id}});
+
+    return isUser;
+  }
+
 }
